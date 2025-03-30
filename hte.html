@@ -1,7 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head><title>Welcome!</title></head>
-<body style="margin:0;">
-  <img src="hmhas.jpg" style="width:100vw; height:auto;">
+<head>
+  <meta charset="UTF-8">
+  <title>Can you?</title>
+  <style>
+    body {
+      background-color: black;
+      color: beige;
+      text-align: center;
+      padding-top: 50px;
+      font-family: 'Arial', sans-serif;
+      font-size: 22px;
+    }
+    img {
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 30px;
+    }
+    input {
+      font-size: 18px;
+      padding: 5px 10px;
+      width: 300px;
+      margin-top: 20px;
+    }
+    button {
+      font-size: 18px;
+      padding: 5px 12px;
+      margin-left: 10px;
+    }
+    #error {
+      color: lightcoral;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 图片 -->
+  <img src="hmhas.jpg" alt="Hint Image" crossorigin="anonymous">
+
+  <!-- 填空提示 -->
+  <p>I hope it's not for sure, can you <u>___________</u>?</p>
+
+  <!-- 填空框 + 按钮 -->
+  <input type="text" id="answer" placeholder="type here">
+  <button onclick="checkAnswer()">Go</button>
+
+  <p id="error"></p>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim().toLowerCase();
+      const correct = "open up the door";
+
+      if (input === correct) {
+        window.location.href = "pre_paris.html";
+      } else {
+        document.getElementById("error").innerText = "That’s not quite it... try again?";
+      }
+    }
+  </script>
+
 </body>
 </html>
