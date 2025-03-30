@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <title> Happier Than Ever </title>
 </head>
-<body style="text-align:center; padding-top:100px;">
+<body style="text-align:center; padding-top:50px;">
+
+  <!-- 图片部分 -->
+  <img src="hello.jpg" alt="封面图" style="max-width:80%; height:auto; margin-bottom:30px;">
+
+  <!-- 标题 + 密码输入框部分 -->
   <h2>What Have You Known? </h2>
   <input type="text" id="password" placeholder="Enter Here">
   <button onclick="checkPassword()">Go</button>
@@ -13,8 +18,8 @@
   <script>
     function checkPassword() {
       var pwd = document.getElementById("password").value;
-      if (pwd === "pffb") { // 你设定的密码
-        window.location.href = "hte.html"; // 跳转到的页面
+      if (pwd === "pffb") {
+        window.location.href = "hte.html";
       } else {
         document.getElementById("error").innerText = "Don't worry, I bet this time it'll work!";
       }
