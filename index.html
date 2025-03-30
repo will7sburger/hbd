@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title> Happier Than Ever </title>
+</head>
+<body style="text-align:center; padding-top:100px;">
+  <h2>What Have You Known? </h2>
+  <input type="text" id="password" placeholder="Enter Here">
+  <button onclick="checkPassword()">Go</button>
+  <p id="error" style="color:red;"></p>
+
+  <script>
+    function checkPassword() {
+      var pwd = document.getElementById("password").value;
+      if (pwd === "pffb") { // 你设定的密码
+        window.location.href = "page1.html"; // 跳转到的页面
+      } else {
+        document.getElementById("error").innerText = "Don't worry, I bet this time it'll work!";
+      }
+    }
+  </script>
+</body>
+</html>
