@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bienvenue.</title>
+  <style>
+    body {
+      background-color: black;
+      color: beige;
+      text-align: center;
+      padding-top: 100px;
+      font-family: Arial, sans-serif;
+      font-size: 20px; /* 字体稍微大一点 */
+    }
+    .countdown {
+      font-size: 26px;
+      margin-top: 30px;
+      color: beige; 
+    }
+  </style>
+</head>
+<body>
+  <h2>Ah! Here we go.</h2>
+  <p>Happy birthday! On this day I wish that, <br>
+  for this year and the lots of great years to come, every door to opportunities will always open for you.</p>
+
+  <div class="countdown">Redirecting in <span id="timer">15</span> seconds...</div>
+
+  <script>
+    let countdown = 15;
+    const timerEl = document.getElementById("timer");
+
+    const interval = setInterval(() => {
+      countdown--;
+      timerEl.textContent = countdown;
+      if (countdown <= 0) {
+        clearInterval(interval);
+        window.location.href = "hte.html";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
