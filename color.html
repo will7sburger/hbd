@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Color Math</title>
+  <style>
+    body {
+      background-color: black;
+      color: beige;
+      text-align: center;
+      padding-top: 80px;
+      font-family: 'Arial', sans-serif;
+      font-size: 22px;
+    }
+    .indigo-word {
+      color: indigo;
+      font-weight: bold;
+    }
+    img {
+      max-width: 100px;
+      height: auto;
+      vertical-align: middle;
+    }
+    input {
+      font-size: 18px;
+      padding: 6px 10px;
+      width: 200px;
+      margin-left: 10px;
+    }
+    button {
+      font-size: 18px;
+      padding: 6px 12px;
+      margin-left: 10px;
+      background-color: transparent;
+      color: beige;
+      border: 2px solid beige;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: beige;
+      color: black;
+    }
+    #error {
+      color: lightcoral;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 等式展示 -->
+  <p>
+    <span class="indigo-word">Indigo</span> + 
+    <img src="red.jpg" alt="Flower Hint" crossorigin="anonymous"> = 
+    <input type="text" id="finalColor" placeholder="your answer">
+    <button onclick="checkAnswer()">Go</button>
+  </p>
+
+  <p id="error"></p>
+
+  <script>
+    function checkAnswer() {
+      const answer = document.getElementById("finalColor").value.trim().toLowerCase();
+      if (answer === "purple") {
+        window.location.href = "purple.html";
+      } else {
+        document.getElementById("error").innerText = "Hmm... think again. What color does it become?";
+      }
+    }
+  </script>
+
+</body>
+</html>
