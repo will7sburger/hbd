@@ -3,15 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title> Happier Than Ever </title>
+  <script src="https://unpkg.com/color-thief/dist/color-thief.umd.js"></script>
+  <style>
+    body {
+      text-align: center;
+      padding-top: 50px;
+      background-color: black; /* 默认背景 */
+      transition: background-color 1s ease;
+      color: white;
+    }
+    img {
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
-<body style="text-align:center; padding-top:50px;">
+<body>
 
   <!-- 图片部分 -->
-  <img src="hey.jpg" alt="封面图" style="max-width:80%; height:auto; margin-bottom:30px;">
+  <img id="mainImage" src="hey.jpg" alt="封面图" crossorigin="anonymous">
 
   <!-- 标题 + 密码输入框部分 -->
-  <h2>What Have You Known? </h2>
-  <input type="text" id="password" placeholder="Enter Here">
+  <h2>Why... What Have You Known? </h2>
+  <input type="text" id="password" placeholder="Enter Keyword Initials Here">
   <button onclick="checkPassword()">Go</button>
   <p id="error" style="color:red;"></p>
 
@@ -24,6 +39,29 @@
         document.getElementById("error").innerText = "Don't worry, I bet this time it'll work!";
       }
     }
+
+    // 自动吸取图片主色作为背景
+    window.onload = function () {
+      const img = document.getElementById("mainImage");
+      const colorThief = new ColorThief();
+
+      if (img.complete) {
+        applyColor();
+      } else {
+        img.addEventListener('load', applyColor);
+      }
+
+      function applyColor() {
+        try {
+          const color = colorThief.getColor(img);
+          document.body.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+        } catch (e) {
+          console.log("无法提取颜色，使用默认背景色");
+          document.body.style.backgroundColor = "black";
+        }
+      }
+    }
   </script>
+
 </body>
 </html>
