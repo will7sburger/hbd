@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Purple Vibes</title>
+  <style>
+    body {
+      background-color: black;
+      color: #d8b0ff; /* 淡紫色 */
+      text-align: center;
+      padding-top: 100px;
+      font-family: 'Arial', sans-serif;
+      font-size: 22px;
+    }
+    input {
+      font-size: 18px;
+      padding: 6px 10px;
+      width: 280px;
+      margin-top: 20px;
+    }
+    button {
+      font-size: 18px;
+      padding: 6px 12px;
+      margin-left: 10px;
+      background-color: transparent;
+      color: #d8b0ff;
+      border: 2px solid #d8b0ff;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #d8b0ff;
+      color: black;
+    }
+    #error {
+      color: lightcoral;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <p>Who's the artist that goes with this color?</p>
+
+  <input type="text" id="artist" placeholder="让我们把她喊出来好吗">
+  <button onclick="checkAnswer()">Go</button>
+
+  <p id="error"></p>
+
+  <script>
+    function checkAnswer() {
+      const answer = document.getElementById("artist").value.trim().toLowerCase();
+      if (answer === "Olivia Rodrigo") {
+        window.location.href = "via.html";
+      } else {
+        document.getElementById("error").innerText = "Not quite purple enough. Try again?";
+      }
+    }
+  </script>
+
+</body>
+</html>
