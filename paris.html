@@ -2,20 +2,31 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Quiz Time</title>
+  <title>Champs-Élysées</title>
   <style>
     body {
       background-color: black;
       color: beige;
       text-align: center;
-      padding-top: 100px;
+      padding-top: 50px;
       font-family: 'Arial', sans-serif;
       font-size: 22px;
     }
+    img {
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 30px;
+    }
+    input {
+      font-size: 18px;
+      padding: 6px 10px;
+      margin-top: 15px;
+      width: 260px;
+    }
     button {
       font-size: 18px;
-      padding: 10px 20px;
-      margin: 10px;
+      padding: 6px 12px;
+      margin-left: 10px;
       background-color: transparent;
       color: beige;
       border: 2px solid beige;
@@ -28,27 +39,32 @@
     }
     #error {
       color: lightcoral;
-      margin-top: 20px;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
 
-  <p>When we all fall asleep, where do we go?</p>
+  <!-- 图片 -->
+  <img src="plan.jpg" alt="Map Friend" crossorigin="anonymous">
 
-  <!-- 选项按钮 -->
-  <button onclick="checkAnswer('Louvre')">Louvre</button>
-  <button onclick="checkAnswer('Champs-Élysées')">Champs-Élysées</button>
-  <button onclick="checkAnswer('The Eiffel Tower')">The Eiffel Tower</button>
+  <!-- 提示问句 -->
+  <p>Join this little friend on the Avenue des Champs-Élysées.<br>
+     Guess what color it is now in the streets?</p>
+
+  <!-- 输入框 + 按钮 -->
+  <input type="text" id="color" placeholder="Your answer here">
+  <button onclick="checkColor()">Go</button>
 
   <p id="error"></p>
 
   <script>
-    function checkAnswer(choice) {
-      if (choice === 'Champs-Élysées') {
-        window.location.href = "paris.html";
+    function checkColor() {
+      const answer = document.getElementById("color").value.trim().toLowerCase();
+      if (answer === "indigo") {
+        window.location.href = "color.html";
       } else {
-        document.getElementById("error").innerText = "Close, but not quite. Try again?";
+        document.getElementById("error").innerText = "Hmm... not quite that hue. Try again?";
       }
     }
   </script>
