@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Oh well, look who's here. </title>
+  <title>Oh well, look who's here.</title>
   <style>
     body {
       background-color: black;
@@ -10,18 +10,19 @@
       text-align: center;
       padding-top: 100px;
       font-family: Arial, sans-serif;
+      font-size: 20px; /* 字体稍微大一点 */
     }
     .countdown {
-      font-size: 24px;
-      margin-top: 20px;
-      color: #cccccc;
+      font-size: 26px;
+      margin-top: 30px;
+      color: beige; 
     }
   </style>
 </head>
 <body>
   <h2>Before you continue...</h2>
   <p>Just like these words that got picked from the lyrics, <br>
-  I wish you always Prioritize your Future first, always have Fun, always turn out Better. </p>
+  I wish you always Prioritize your Future first, always have Fun, always turn out Better.</p>
 
   <div class="countdown">Redirecting in <span id="timer">15</span> seconds...</div>
 
@@ -34,7 +35,7 @@
       timerEl.textContent = countdown;
       if (countdown <= 0) {
         clearInterval(interval);
-        window.location.href = "hte.html"; // 👈 这里写你真正要跳转的下一页
+        window.location.href = "hte.html";
       }
     }, 1000);
   </script>
