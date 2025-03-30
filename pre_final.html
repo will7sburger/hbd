@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Yeeeeeeessssss!</title>
+  <style>
+    body {
+      background-color: black;
+      color: beige;
+      text-align: center;
+      padding-top: 100px;
+      font-family: Arial, sans-serif;
+      font-size: 20px; /* 字体稍微大一点 */
+    }
+    .countdown {
+      font-size: 26px;
+      margin-top: 30px;
+      color: beige; 
+    }
+  </style>
+</head>
+<body>
+  <h2>And this, </h2>
+  <p>is for sharing.</p>
+
+  <div class="countdown">Redirecting in <span id="timer">9</span> seconds...</div>
+
+  <script>
+    let countdown = 9;
+    const timerEl = document.getElementById("timer");
+
+    const interval = setInterval(() => {
+      countdown--;
+      timerEl.textContent = countdown;
+      if (countdown <= 0) {
+        clearInterval(interval);
+        window.location.href = "final.html";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
