@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Purple</title>
+  <style>
+    body {
+      background-color: black;
+      color: beige;
+      text-align: center;
+      padding-top: 100px;
+      font-family: Arial, sans-serif;
+      font-size: 20px; /* 字体稍微大一点 */
+    }
+    .countdown {
+      font-size: 26px;
+      margin-top: 30px;
+      color: beige; 
+    }
+  </style>
+</head>
+<body>
+  <h2>Teen pop a little...</h2>
+  <p>Happy birthday. I wish you always have the GUTS to live up every day in this year to come, <br>
+  and that you always have the best luck of turning SOUR into sweet along the way. </p>
+
+  <div class="countdown">Redirecting in <span id="timer">15</span> seconds...</div>
+
+  <script>
+    let countdown = 15;
+    const timerEl = document.getElementById("timer");
+
+    const interval = setInterval(() => {
+      countdown--;
+      timerEl.textContent = countdown;
+      if (countdown <= 0) {
+        clearInterval(interval);
+        window.location.href = "via.html";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
