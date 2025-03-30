@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Oh well, look who's here. </title>
+  <style>
+    body {
+      background-color: black;
+      color: beige;
+      text-align: center;
+      padding-top: 100px;
+      font-family: Arial, sans-serif;
+    }
+    .countdown {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #cccccc;
+    }
+  </style>
+</head>
+<body>
+  <h2>Before you continue...</h2>
+  <p>Just like these words that got picked from the lyrics, <br>
+  I wish you always Prioritize your Future first, always have Fun, always turn out Better. </p>
+
+  <div class="countdown">Redirecting in <span id="timer">15</span> seconds...</div>
+
+  <script>
+    let countdown = 15;
+    const timerEl = document.getElementById("timer");
+
+    const interval = setInterval(() => {
+      countdown--;
+      timerEl.textContent = countdown;
+      if (countdown <= 0) {
+        clearInterval(interval);
+        window.location.href = "hte.html"; // 👈 这里写你真正要跳转的下一页
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
