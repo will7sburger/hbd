@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>All The Time</title>
+  <title>Final Letter</title>
   <style>
     body {
       background-color: black;
@@ -22,16 +22,48 @@
       padding: 6px 10px;
       width: 220px;
     }
+    button {
+      font-size: 18px;
+      padding: 6px 12px;
+      margin-left: 10px;
+      background-color: transparent;
+      color: beige;
+      border: 2px solid beige;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: beige;
+      color: black;
+    }
+    #error {
+      color: lightcoral;
+      margin-top: 15px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- 图片展示 -->
+  <!-- 图片 -->
   <img src="v2.jpg" alt="Visual Clue" crossorigin="anonymous">
 
-  <!-- 问题和输入 -->
+  <!-- 问题 -->
   <p>_?</p>
-  <input type="text" placeholder="Enter a single letter">
+  <input type="text" id="letter" placeholder="Enter a single letter">
+  <button onclick="checkLetter()">Go</button>
+
+  <p id="error"></p>
+
+  <script>
+    function checkLetter() {
+      const input = document.getElementById("letter").value.trim().toLowerCase();
+      if (input === "y") {
+        window.location.href = "final.html";
+      } else {
+        document.getElementById("error").innerText = "That’s not quite the one... try again?";
+      }
+    }
+  </script>
 
 </body>
 </html>
