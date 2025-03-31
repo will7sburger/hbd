@@ -27,6 +27,15 @@
       font-size: 18px;
       padding: 5px 12px;
       margin-left: 10px;
+      background-color: transparent;
+      color: beige;
+      border: 2px solid beige;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: beige;
+      color: black;
     }
     #error {
       color: lightcoral;
@@ -35,6 +44,12 @@
   </style>
 </head>
 <body>
+
+  <!-- 音乐播放（自动 + 循环） -->
+  <audio autoplay loop>
+    <source src="hmhas.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <!-- 图片 -->
   <img src="hmhas.jpg" alt="Hint Image" crossorigin="anonymous">
